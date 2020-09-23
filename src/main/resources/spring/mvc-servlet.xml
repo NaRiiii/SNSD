@@ -36,10 +36,10 @@
 	
 	<!-- 자바파일에 설정 된 어노테이션을 검색해서 빈으로 등록 
 		빈 : 스프링이 관리하는 객체  -->
-		<!-- 컨트롤러 어노테이션사용할때 -->
-	<!-- <context:component-scan base-package="kr.co.soccer" use-default-filters="false" >
+		
+	<context:component-scan base-package="kr.co" use-default-filters="false" >
 		<context:include-filter type="annotation" expression="org.springframework.stereotype.Controller"/>
-	</context:component-scan> -->
+	</context:component-scan>
 	
 	<!-- <interceptors>
 	모든 요청에 적용되는 인터셉터

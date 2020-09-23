@@ -33,7 +33,7 @@
 
                                             <ul class="nav navbar-nav navbar-right">
                                                 <li><a href="#home">HOME</a></li>
-                                                <li><a href="#league">League</a></li>
+                                                <li><a href="/template.sc">League</a></li>
                                                 <li><a href="#info">Info</a></li>
                                                 <li><a href="#calendar">Calendar</a></li>
                                                 <li><a href="#board">Board</a></li>
