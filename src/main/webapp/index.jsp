@@ -58,7 +58,7 @@
                                                 <span class="icon-bar"></span>
                                             </button>
                                             <a class="navbar-brand" href="#home">
-                                                <h1>SNSsssD</h1>
+                                                <h3>SNSD</h3>
                                             </a>
                                         </div>
 
@@ -107,7 +107,7 @@
                                                 <h3>Our Clients Are Our First Priority</h3>
                                                 <h1>WELCOME TO BINO</h1>
                                                 <div class="separator"></div>
-                                                <p>왜안돼 어떻게하라는거야 진짜 !!!!!!!!!!!!!!!!!!!!.</p>
+                                                <p>왜안돼 어떻게하라는거야 진짜 !!!!!!!!봉경짱!!!!!!!!!!!!.</p>
                                                 <div class="home_btn">
                                                     <a href="" class="btn btn-lg m_t_10">GET STARTED NOW</a>
                                                     <a href="" class="btn btn-default">LEARN MORE</a>
