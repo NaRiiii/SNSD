@@ -1,0 +1,71 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans:beans xmlns="http://www.springframework.org/schema/mvc"
+	xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+	xmlns:beans="http://www.springframework.org/schema/beans"
+	xmlns:context="http://www.springframework.org/schema/context"
+	xmlns:util="http://www.springframework.org/schema/util"
+	xmlns:mybatis-spring="http://mybatis.org/schema/mybatis-spring"
+	xsi:schemaLocation="http://www.springframework.org/schema/mvc https://www.springframework.org/schema/mvc/spring-mvc.xsd
+		http://mybatis.org/schema/mybatis-spring http://mybatis.org/schema/mybatis-spring-1.2.xsd
+		http://www.springframework.org/schema/beans https://www.springframework.org/schema/beans/spring-beans.xsd
+		http://www.springframework.org/schema/context https://www.springframework.org/schema/context/spring-context.xsd
+		http://www.springframework.org/schema/util http://www.springframework.org/schema/util/spring-util-4.3.xsd">
+
+	<!-- DispatcherServlet Context: defines this servlet's request-processing infrastructure -->
+	
+	<!-- Enables the Spring MVC @Controller programming model -->
+	<annotation-driven />
+	
+	<!-- 매핑에 대해서 바로 뷰를 설정하고자 하는 경우(컨트롤러가 필요없는 경우)-->
+	<!-- view-name 이 없다면 path 정보가 뷰로 결정된다. -->
+	<!-- <view-controller path= "/upload/form" view-name="uploadForm" /> -->
+	
+	<!-- 요청에 대한 매핑이 존재하지 않을 때 WAS에게 매핑을 넘기도록 처리 --> 
+	 <default-servlet-handler/> 
+	 
+	<!-- Handles HTTP GET requests for /resources/** by efficiently serving up static resources in the ${webappRoot}/resources directory
+		정적자원(이미지, css, js ,...) 의 GET요청에 대한 매핑
+	 -->
+	<!-- <resources mapping="/resources/**" location="/resources/" /> -->
+
+	<!-- Resolves views selected for rendering by @Controllers to .jsp resources in the /WEB-INF/views directory -->
+	<beans:bean class="org.springframework.web.servlet.view.InternalResourceViewResolver">
+		<beans:property name="prefix" value="/WEB-INF/views/" />
+		<beans:property name="suffix" value=".jsp" />
+	</beans:bean>
+	
+	<!-- 자바파일에 설정 된 어노테이션을 검색해서 빈으로 등록 
+		빈 : 스프링이 관리하는 객체  -->
+		<!-- 컨트롤러 어노테이션사용할때 -->
+	<!-- <context:component-scan base-package="kr.co.soccer" use-default-filters="false" >
+		<context:include-filter type="annotation" expression="org.springframework.stereotype.Controller"/>
+	</context:component-scan> -->
+	
+	<!-- <interceptors>
+	모든 요청에 적용되는 인터셉터
+		<beans:bean class="kr.co.soccer.common.interceptor.LoggingInterceptor" />
+		
+		매핑별 인터셉터
+		<interceptor>
+			<mapping path="/mypage/**"/>
+			<mapping path="/member/**"/>
+			<mapping path="/reply/**"/>
+			제외할 별도 매핑
+			<exclude-mapping path="/reply/replyList"/>
+			<beans:bean class="kr.co.soccer.common.interceptor.LoginCheckInterceptor" />
+		</interceptor>
+	
+	</interceptors> -->
+	
+	<!-- 파일업로드 -->
+	<!-- <beans:bean id="multipartResolver" 
+				  class="org.springframework.web.multipart.commons.CommonsMultipartResolver">
+		<beans:property name="maxUploadSizePerFile" value="#{app['file.upload.each.size']}" />
+		<beans:property name="maxUploadSize"        value="#{app['file.upload.max.size']}" />
+		<beans:property name="maxInMemorySize"      value="#{app['file.upload.memory.size']}" />
+	</beans:bean> -->
+	
+	
+	
+	
+</beans:beans>
