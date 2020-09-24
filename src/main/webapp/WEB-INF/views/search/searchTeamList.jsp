@@ -47,35 +47,44 @@
                     </div>
                 </div>
             </section><!--End of home section -->
+            <!--home Section -->
+            <table class="table table-striped table-bordered table-hover ">
+	<colgroup>
+		<col width="10%" />
+		<col width="15%" />
+		<col />
+		<col width="10%" />
+		<col width="15%" />
+		<col width="10%" />
+	</colgroup>
+	<thead>
+		<tr>
+			<th>글번호</th>
+			<th>분류</th>
+			<th>제목</th>
+			<th>작성자</th>
+			<th>등록일</th>
+			<th>조회수</th>
+		</tr>
+	</thead>	
+	<tbody>
+		<tr class="text-center">
+			<td>1</td>
+			<td>분류용</td>
+			<td class="text-left">
+				<a href="#">
+					지원합니다
+				</a>
+			</td>
+			<td>최승주</td>
+			<td>20200902</td>
+			<td>100</td>
+		</tr>
+		
+		
+	</tbody>
+	</table>
             
-            <!-- 기본템플릿 History // 다른 템플릿 불러오려면 이 곳을 지우셔야 합니당 -->
-            <!-- History section -->
-            <section id="history" class="history sections">
-                <div class="container">
-                    <div class="row">
-                        <div class="main_history">
-                            <div class="col-sm-6">
-                                <div class="single_history_img">
-                                    <img src="${pageContext.request.contextPath}/resources/images/stab1.png" alt="" />
-                                </div>
-                            </div>
-
-                            <div class="col-sm-6">
-                                <div class="single_history_content">
-                                    <div class="head_title">
-                                        <h2>OUR HISTORY</h2>
-                                    </div>
-                                    	
-                                    <p>이곳에 작성해주세요 </p>
-
-                                    <a href="" class="btn btn-lg">BROWSE OUR WORK</a>
-                                </div>
-                            </div>
-                        </div>
-                    </div><!--End of row -->
-                </div><!--End of container -->
-            </section><!--End of history -->
-            <!-- 여기에 작성해주세요 --> 
             
             
 		<%@ include file="/WEB-INF/inc/footer.jsp" %>

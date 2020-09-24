@@ -1,0 +1,159 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper
+  PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+  "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<!-- nameSpace : 간단하게 하셔도 됩니다. 단, mapper 클래스를 사용하려면 완전한 클래스 이름으로 지정 -->
+<mapper namespace="com.study.member.dao.IMemberDao"> <!-- 인터페이스 -->
+	<sql id="whereClause">
+		<if
+			test="@org.apache.commons.lang3.StringUtils@isNotBlank(searchJob)">
+			AND mem_job = #{searchJob}
+		</if>
+		<if
+			test="@org.apache.commons.lang3.StringUtils@isNotBlank(searchLike)">
+			AND mem_like = #{searchLike}
+		</if>
+		<if
+			test="@org.apache.commons.lang3.StringUtils@isNotBlank(searchWord)">
+			<choose>
+				<when test='searchType == "N"'>
+					AND mem_name LIKE '%' || #{searchWord} || '%'
+				</when>
+				<when test='searchType == "I"'>
+					AND mem_id LIKE '%' || #{searchWord} || '%'
+				</when>
+				<when test='searchType == "H"'>
+					AND mem_hp LIKE '%' || #{searchWord} || '%'
+				</when>
+				<when test='searchType == "A1"'>
+					AND mem_add1 LIKE '%' || #{searchWord} || '%'
+				</when>
+				<when test='searchType == "A2"'>
+					AND mem_add2 LIKE '%' || #{searchWord} || '%'
+				</when>
+				<otherwise>
+					AND mem_name LIKE '%' || #{searchWord} || '%'
+				</otherwise>
+			</choose>
+		</if>
+	</sql>
+	<insert id="insertMember"
+		parameterType="kr.co.soccer.member.MemberVO">
+				INSERT INTO member (
+				  mem_id      , mem_pass , mem_name 
+				, mem_bir     , mem_zip  , mem_add1
+				, mem_add2    , mem_hp   , mem_mail
+				, mem_job     , mem_like
+				, mem_mileage , mem_delete
+				) VALUES (
+				<![CDATA[                                   
+			 	  #{memId}     , #{memPass} , #{memName} 
+			 	, #{memBir}    , #{memZip}  , #{memAdd1} 
+			 	, #{memAdd2}   , #{memHp}   , #{memMail} 
+			    , #{memJob}    , #{memLike} , 0 
+			 	, 'N')
+				 ]]>
+	</insert>
+
+	<update id="updateMember"
+		parameterType="kr.co.soccer.member.MemberVO">
+				UPDATE member  
+				<![CDATA[         
+			  	 SET mem_name    = #{memName} 
+			       , mem_bir     = #{memBir} 
+			       , mem_zip     = #{memZip} 
+			       , mem_add1    = #{memAdd1} 
+			       , mem_add2    = #{memAdd2} 
+			       , mem_hp      = #{memHp} 
+			       , mem_mail    = #{memMail} 
+			       , mem_job     = #{memJob} 
+			       , mem_like    = #{memLike} 
+				  WHERE mem_id   = #{memId}    
+				 ]]>
+	</update>
+
+	<delete id="deleteMember"
+		parameterType="kr.co.soccer.member.MemberVO">
+				UPDATE member    
+				<![CDATA[       
+				 SET mem_delete = 'Y'      
+				 WHERE mem_id = #{memId} 
+				  ]]>
+
+	</delete>
+
+	<select id="getMemberList"
+		parameterType="kr.co.soccer.member.MemberSearchVO"
+		resultType="kr.co.soccer.member.MemberVO">
+
+		<include refid="common.PRE_PAGING_SQL" />
+				SELECT mem_id
+				  	 , mem_pass
+					 , mem_name
+					 , TO_CHAR(mem_bir, 'YYYY-MM-DD') AS mem_bir
+					 , mem_zip
+					 , mem_add1
+					 , mem_add2
+					 , mem_hp
+					 , mem_mail
+					 , mem_job
+					 , b.comm_nm as mem_job_nm
+					 , mem_like
+					 , c.comm_nm as mem_like_nm
+					 , mem_delete 
+					 , mem_mileage
+				FROM member, comm_code b, comm_code c
+				 WHERE
+					mem_job = b.comm_cd
+					AND mem_job = c.comm_cd
+					AND (mem_delete = 'N' or mem_delete is null)
+				<include refid="whereClause"/>
+				order by mem_id desc
+				<include refid="common.SUF_PAGING_SQL" />
+	</select>
+
+	<select id="getMember" parameterType="string"
+		resultType="kr.co.soccer.member.MemberVO">
+				SELECT mem_id
+				     , mem_pass
+					 , mem_name
+					 , TO_CHAR(mem_bir, 'YYYY-MM-DD') AS mem_bir
+					 , mem_zip
+					 , mem_add1
+					 , mem_add2
+					 , mem_hp
+					 , mem_mail
+					 , mem_job
+					 , ( select comm_nm from comm_code where mem_job = comm_cd ) as mem_job_nm
+					 , mem_like
+					 , ( select comm_nm from comm_code where mem_like = comm_cd ) as mem_like_nm
+					 , mem_delete , mem_mileage
+				FROM member  
+					  <![CDATA[                                     
+				WHERE mem_id = #{memId}
+		 				]]>
+	</select>
+
+	<select id="getMemberCount" resultType="int"
+		parameterType="kr.co.soccer.member.MemberVO">
+				SELECT count(*)
+				FROM member
+				 WHERE 1 = 1
+				<include refid="whereClause"/>
+	</select>
+
+	<select id="getUserRoleByUserId" parameterType="String" resultType="String">
+		SELECT LISTAGG(role_nm, ', ') WITHIN GROUP(ORDER BY role_nm)
+		FROM user_role WHERE user_id = #{userId}
+	</select>
+	
+	<update id="updateMemberDelete">
+	 UPDATE MEMBER
+	   SET mem_delete = 'Y'
+	   WHERE 
+	   <foreach collection="array" item="id" open="mem_id in (" close=")" separator="," >
+	   	#{id}
+	   </foreach>
+	</update>
+	
+</mapper>

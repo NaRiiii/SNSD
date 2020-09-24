@@ -3,7 +3,7 @@
 	pageEncoding="UTF-8"%>
 	<%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core" %>
 
-<!-- top.jsp -->
+<!-- top.jsp --> 
 
 <header id="main_menu" class="header navbar-fixed-top">            
                 <div class="main_menu_bg">
@@ -20,7 +20,7 @@
                                                 <span class="icon-bar"></span>
                                                 <span class="icon-bar"></span>
                                             </button>
-                                            <a class="navbar-brand" href="#home">
+                                            <a class="navbar-brand" href="/index.sc">
                                                 <h2>SNSD</h2>
                                             </a>
                                         </div>
@@ -32,11 +32,13 @@
                                         <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
 
                                             <ul class="nav navbar-nav navbar-right">
-                                                <li><a href="#home">HOME</a></li>
+                                                <li><a href="/index.sc">HOME</a></li>
                                                 <li><a href="/template.sc">League</a></li>
                                                 <li><a href="#info">Info</a></li>
                                                 <li><a href="#calendar">Calendar</a></li>
                                                 <li><a href="#board">Board</a></li>
+                                                <li><a href="#login">login</a></li>
+                                                
                                                 <!-- <li><a href="#blog">BLOG</a></li>
                                                 <li><a href="#contact">CONTACT</a></li> -->
                                             </ul>
@@ -53,3 +55,4 @@
 
                 </div>
             </header>
+            

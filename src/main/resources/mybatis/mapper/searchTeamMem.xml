@@ -1,0 +1,30 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper
+  PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+  "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<!-- nameSpace : 간단하게 하셔도 됩니다. 단, mapper 클래스를 사용하려면 완전한 클래스 이름으로 지정 -->
+<mapper namespace="kr.co.soccer.searchTeamMem.SearchTeamMemMapper">
+<select id="selectSearchTeamList">
+	 SELECT
+	    scht_no
+	    , mem_id
+	    , scht_position
+	    , scht_age
+	    , scht_region
+	    , scht_time
+	    , scht_hit
+	    , scht_title
+	    , scht_content
+	    , mem_pass
+	FROM
+	    searchteam
+
+</select>
+ 
+
+
+
+
+
+
+</mapper>

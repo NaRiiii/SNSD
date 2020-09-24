@@ -1,0 +1,5 @@
+#무시할 파일 
+
+.settings
+target/
+MANIFEST
