@@ -1,9 +1,9 @@
-<?xml version="1.0" encoding="UTF-8" ?>
+<!-- <?xml version="1.0" encoding="UTF-8" ?>
 <!DOCTYPE mapper
   PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
   "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
-<!-- nameSpace : 간단하게 하셔도 됩니다. 단, mapper 클래스를 사용하려면 완전한 클래스 이름으로 지정 -->
-<mapper namespace="com.study.member.dao.IMemberDao"> <!-- 인터페이스 -->
+nameSpace : 간단하게 하셔도 됩니다. 단, mapper 클래스를 사용하려면 완전한 클래스 이름으로 지정
+<mapper namespace="com.study.member.dao.IMemberDao"> 인터페이스
 	<sql id="whereClause">
 		<if
 			test="@org.apache.commons.lang3.StringUtils@isNotBlank(searchJob)">
@@ -156,4 +156,4 @@
 	   </foreach>
 	</update>
 	
-</mapper>
+</mapper> -->
