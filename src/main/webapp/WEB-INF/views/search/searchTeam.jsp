@@ -9,11 +9,46 @@
     <head>
     <%@ include file="/WEB-INF/inc/header.jsp" %>
     <title>Social Network Soccer Dreaming</title> 
+    <style>
+    #homeIMG{
+    /* 원하는 메인이미지를 resources안에 images폴더에 넣은 후 이미지 변경해주세요 */
+    background: url(${pageContext.request.contextPath}/resources/images/teambg.jpg) no-repeat center center;
+    background-size: cover;
+}
+    </style>
     </head>
     <body data-spy="scroll" data-target=".navbar-collapse">
         <div class='preloader'><div class='loaded'>&nbsp;</div></div>
         <div class="culmn">
         <%@ include file="/WEB-INF/inc/top.jsp" %>
+            <!--home Section -->
+            <section id="homeIMG" class="home" >
+                <div class="overlay">
+                    <div class="home_skew_border">
+                        <div class="container">
+                            <div class="row">
+                                <div class="col-sm-12 ">
+                                    <div class="main_home_slider text-center">
+                                        <div class="single_home_slider">
+                                            <div class="main_home wow fadeInUp" data-wow-duration="700ms">
+                                                		<!-- 멘트만 바꿔주세용</p> -->
+                                                <h3>TEMPLATE </h3>
+                                                <h1>BOARD</h1>
+                                                <div class="separator"></div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="scrooldown">
+                            <a href="#feature"><i class="fa fa-arrow-down"></i></a>
+                        </div>
+                    </div>
+                </div>
+            </section><!--End of home section -->
+            
+            
             <!--home Section -->
             <div class="container marketing">
         <div class="row">

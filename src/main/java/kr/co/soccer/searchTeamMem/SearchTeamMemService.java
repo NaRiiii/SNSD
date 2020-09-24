@@ -2,18 +2,14 @@ package kr.co.soccer.searchTeamMem;
 
 import java.util.List;
 
-import org.springframework.beans.factory.annotation.Autowired;
+import javax.inject.Inject;
+
 import org.springframework.stereotype.Service;
 
 @Service
 public class SearchTeamMemService {
-
-	private final SearchTeamMemMapper mapper;
-
-	@Autowired
-	public SearchTeamMemService(SearchTeamMemMapper mapper) {
-		this.mapper = mapper;
-	}
+	@Inject
+	SearchTeamMemMapper mapper;
 	
 	public List<SearchTeamMemVO> selectSearchTeamList() throws Exception{
 		return mapper.selectSearchTeamList();
