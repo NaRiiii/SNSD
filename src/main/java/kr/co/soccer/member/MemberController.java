@@ -55,17 +55,22 @@ public class MemberController {
 	}
 	
 	
-	//MAV로 반환, @requestMapping POST제한
-	@RequestMapping(path = "/member/memberRegist.wow", method = RequestMethod.POST)
-	public RedirectView memberRegist(@ModelAttribute("mem") @Validated(Default.class )MemberVO member, BindingResult errors) throws Exception {
-		logger.debug("member={}",member);
-		
-		if(errors.hasErrors()) {
-			return "member/memberForm";
-		}
-		memberService.registMember(member);
-		return "member/memberList";		
-	}
+	/*
+	 * //MAV로 반환, @requestMapping POST제한
+	 * 
+	 * @RequestMapping(path = "/member/memberRegist.wow", method =
+	 * RequestMethod.POST) public RedirectView
+	 * memberRegist(@ModelAttribute("mem") @Validated(Default.class )MemberVO
+	 * member, BindingResult errors) throws Exception {
+	 * logger.debug("member={}",member);
+	 */
+		/*
+		 * if(errors.hasErrors()) { return "member/memberForm"; }
+		 */
+		/*
+		 * memberService.registMember(member); return "member/memberList";
+		 */	
+	/* } */
 	
 	//String으로 반환, @requestMapping memId파라미터 존재하도록 제한
 	@RequestMapping(path = "/member/memberView.wow",params="memId")
@@ -91,16 +96,18 @@ public class MemberController {
 		if(errors.hasErrors()) {
 			return "member/memberEdit";
 		}
-		memberService.modifyMember(member);
-		return "redirect:/member/memberView.wow?memId=" + member.getMemId();
+//		memberService.modifyMember(member);
+//		return "redirect:/member/memberView.wow?memId=" + member.getMemId();
+		return null;
 	}
 	
 	//String으로 반환, @requestMapping memId, memPass파라미터 존재하도록 제한, POST제한
 	@RequestMapping(path = "/member/memberDelete.wow" , method = RequestMethod.POST ,params = {"memId","memPass"})
 	public String memberDelete(MemberVO member, ModelMap model) throws Exception {
 		logger.debug("member={}",member);
-		memberService.removeMember(member);
-		return "common/message";
+//		memberService.removeMember(member);
+//		return "common/message";
+		return null;
 	}
 	
 	@RequestMapping(path = "/member/memberCheckedDelete.wow", params = "memId")

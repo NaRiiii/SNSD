@@ -7,19 +7,16 @@ import org.apache.commons.lang3.builder.ToStringBuilder;
 import org.apache.commons.lang3.builder.ToStringStyle;
 import org.hibernate.validator.constraints.ScriptAssert;
 
-import com.study.common.vaild.JoinStep1;
-import com.study.common.vaild.JoinStep2;
-
 @SuppressWarnings("serial")
-@ScriptAssert(lang="javascript", script = "_.memPass == _.memPassConfirm", alias="_",groups = {JoinStep2.class}, message = "비밀번호가 일치하지않습니다")
+@ScriptAssert(lang="javascript", script = "_.memPass == _.memPassConfirm", alias="_", message = "비밀번호가 일치하지않습니다")
 public class MemberJoinVO extends MemberVO {
 	
-	@NotBlank(message = "이용약관은 필수입니다.", groups = JoinStep1.class )
-	@Pattern(regexp = "Y", message = "이용약관 동의 체크해주세요", groups = JoinStep1.class)
+	@NotBlank(message = "이용약관은 필수입니다." )
+	@Pattern(regexp = "Y", message = "이용약관 동의 체크해주세요")
 	private String agreeYn ;
 	
-	@NotBlank(message = "개인정보 수집 및 이용에 대한 동의는 필수입니다.", groups = JoinStep1.class )
-	@Pattern(regexp = "Y", message = "개인정보 수집 및 이용에 대한 동의 체크해주세요", groups = JoinStep1.class)
+	@NotBlank(message = "개인정보 수집 및 이용에 대한 동의는 필수입니다." )
+	@Pattern(regexp = "Y", message = "개인정보 수집 및 이용에 대한 동의 체크해주세요")
 	private String privacyYn;
 	
 	private String eventYn;

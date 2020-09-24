@@ -1,9 +1,6 @@
 package kr.co.soccer.member;
 
-import org.apache.commons.lang3.builder.ToStringBuilder;
-import org.apache.commons.lang3.builder.ToStringStyle;
-
-import com.study.common.vo.PagingVO;
+import kr.co.soccer.common.vo.PagingVO;
 
 @SuppressWarnings("serial")
 public class MemberSearchVO extends PagingVO {

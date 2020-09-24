@@ -4,9 +4,6 @@ import java.util.List;
 
 import org.apache.ibatis.annotations.Mapper;
 
-import com.study.member.vo.MemberSearchVO;
-import com.study.member.vo.MemberVO;
-
 
 @Mapper
 public interface MemberMapper {
