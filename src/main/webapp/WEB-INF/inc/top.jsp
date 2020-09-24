@@ -20,7 +20,7 @@
                                                 <span class="icon-bar"></span>
                                                 <span class="icon-bar"></span>
                                             </button>
-                                            <a class="navbar-brand" href="#home">
+                                            <a class="navbar-brand" href="/index.sc">
                                                 <h2>SNSD</h2>
                                             </a>
                                         </div>
@@ -32,7 +32,7 @@
                                         <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
 
                                             <ul class="nav navbar-nav navbar-right">
-                                                <li><a href="#home">HOME</a></li>
+                                                <li><a href="/index.sc">HOME</a></li>
                                                 <li><a href="/template.sc">League</a></li>
                                                 <li><a href="#info">Info</a></li>
                                                 <li><a href="#calendar">Calendar</a></li>

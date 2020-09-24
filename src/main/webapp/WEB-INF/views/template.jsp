@@ -65,6 +65,7 @@
                                     <div class="head_title">
                                         <h2>OUR HISTORY</h2>
                                     </div>
+                                    	
                                     <p>이곳에 작성해주세요 </p>
 
                                     <a href="" class="btn btn-lg">BROWSE OUR WORK</a>
