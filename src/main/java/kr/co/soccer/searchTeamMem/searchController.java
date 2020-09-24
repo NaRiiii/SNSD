@@ -7,6 +7,6 @@ import org.springframework.web.bind.annotation.GetMapping;
 public class searchController {
 	@GetMapping("search/searchTeam.sc")
 	public String register() {
-		return "search/searchTeam";
+		return "search/searchTeam"; 
 	}
 }
