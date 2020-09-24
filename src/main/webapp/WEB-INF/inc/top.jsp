@@ -3,7 +3,7 @@
 	pageEncoding="UTF-8"%>
 	<%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core" %>
 
-<!-- top.jsp -->
+<!-- top.jsp --> 
 
 <header id="main_menu" class="header navbar-fixed-top">            
                 <div class="main_menu_bg">
@@ -37,6 +37,8 @@
                                                 <li><a href="#info">Info</a></li>
                                                 <li><a href="#calendar">Calendar</a></li>
                                                 <li><a href="#board">Board</a></li>
+                                                <li><a href="#login">login</a></li>
+                                                
                                                 <!-- <li><a href="#blog">BLOG</a></li>
                                                 <li><a href="#contact">CONTACT</a></li> -->
                                             </ul>

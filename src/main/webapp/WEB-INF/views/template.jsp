@@ -75,7 +75,7 @@
                     </div><!--End of row -->
                 </div><!--End of container -->
             </section><!--End of history -->
-            <!-- 여기에 작성해주세요 -->
+            <!-- 여기에 작성해주세요 --> 
             
             
 		<%@ include file="/WEB-INF/inc/footer.jsp" %>
