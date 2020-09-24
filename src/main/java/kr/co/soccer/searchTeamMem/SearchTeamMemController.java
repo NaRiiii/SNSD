@@ -19,9 +19,6 @@ public class SearchTeamMemController {
 	}
 	@GetMapping("/search/searchTeamList.sc")
 	public String selectSearchTeamList(Model model) throws Exception{
-//		model.addAttribute("List",service.selectSearchTeamList());
-		List<SearchTeamMemVO> list = service.selectSearchTeamList();
-		model.addAttribute("List", list);
 		return "search/searchTeamList";
 	}
 }
