@@ -1,4 +1,4 @@
-package kr.co.soccer.search;
+package kr.co.soccer.searchTeamMem;
 
 import org.springframework.stereotype.Controller;
 import org.springframework.web.bind.annotation.GetMapping;
